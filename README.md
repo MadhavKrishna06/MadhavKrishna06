@@ -19,7 +19,6 @@ I'm finishing an M.S. in Computer Science at Texas Tech. Through most of 2026 I 
 
 From April to September 2026 I owned the AI infrastructure at Texas Tech University Online. That code belongs to the university, so it isn't public. Roughly what it was:
 
-- **An LLM API gateway** in front of every model provider the division used. Each developer got a virtual key with a token budget attached; the gateway authenticated it, metered it, and refused it when the budget was gone. Every request appended to a hash-chained audit log, so editing an old entry broke every entry after it. Later extended into a multi-tenant analytics layer for auditing AI voice-call quality — encrypted per-tenant keys, usage reporting, a triage queue for low-quality calls.
 - **A student-facing chatbot**, shipped to production. Hybrid retrieval — dense vectors for meaning, keyword search for the exact course code someone typed — with a Redis semantic cache so the fiftieth phrasing of a question didn't cost a fiftieth call. Layered evaluation scored the answer and the retrieval that produced it. A crisis-keyword interceptor pulled certain conversations out of the model's hands entirely, and a prompt-injection filter sat in front, tested against adversarial inputs rather than assumed to work.
 - **A reporting layer** on Snowflake, surfaced through Sigma, that replaced a pile of manual Salesforce and Smartsheet exports with dashboards that update themselves.
 
@@ -55,4 +54,4 @@ Things I care about that aren't libraries: multi-tenant isolation, API security,
 
 If you're building something where the LLM has to actually behave, I'd like to hear about it.
 
-**[Email](mailto:madhav.arumulla@gmail.com)** · **[LinkedIn](https://linkedin.com/in/madhav-krishna-arumulla-033612290)** · Lubbock, Texas
+**[LinkedIn](https://linkedin.com/in/madhav-krishna-arumulla-033612290)** · Lubbock, Texas
